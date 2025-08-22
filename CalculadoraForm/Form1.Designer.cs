@@ -1,6 +1,6 @@
 ﻿namespace CalculadoraForm
 {
-    partial class Form1
+    partial class txbCalculadora
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -167,6 +167,7 @@
             this.btnLimpar.TabIndex = 10;
             this.btnLimpar.Text = "C";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnIgual
             // 
@@ -233,10 +234,10 @@
             this.txbTela.Size = new System.Drawing.Size(312, 84);
             this.txbTela.TabIndex = 16;
             // 
-            // Form1
+            // txbCalculadora
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(358, 450);
             this.Controls.Add(this.txbTela);
@@ -256,8 +257,8 @@
             this.Controls.Add(this.btn9);
             this.Controls.Add(this.btn8);
             this.Controls.Add(this.btn7);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "txbCalculadora";
+            this.Text = "Calculadora";
             this.ResumeLayout(false);
             this.PerformLayout();
 

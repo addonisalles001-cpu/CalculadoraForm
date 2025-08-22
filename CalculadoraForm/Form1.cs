@@ -10,19 +10,48 @@ using System.Windows.Forms;
 
 namespace CalculadoraForm
 {
-    public partial class Form1 : Form
+    public partial class txbCalculadora : Form
     {
         // Variáveis Globais:
         bool operadorClicado = true;
 
-        public Form1()
+        public txbCalculadora()
         {
             InitializeComponent();
         }
+        
 
         private void btnIgual_Click(object sender, EventArgs e)
         {
+            
+
             // Implementar depois...
+            try
+            {
+                var resultado = new DataTable().Compute(txbTela.Text, null);
+                txbTela.Text = resultado.ToString();
+                if(txbTela.Text == "∞")
+                {
+                    btnLimpar.PerformClick();
+                    MessageBox.Show("Deu ruim Parsa");
+                   
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                btnLimpar.PerformClick();
+                MessageBox.Show("");
+                
+             
+
+             
+            }
+
+
+
         }
 
         private void numero_Click(object sender, EventArgs e)
@@ -36,6 +65,7 @@ namespace CalculadoraForm
             // "abaixar a bandeirinha"
             operadorClicado = false;
         }
+        
 
         private void operador_Click(object sender, EventArgs e)
         {
@@ -52,7 +82,14 @@ namespace CalculadoraForm
                 operadorClicado = true;
             }
         }
-        
 
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            // Limpar a tela:
+            txbTela.Text = "";
+            // Voltar o operador clicado para true:
+            operadorClicado = true;
+
+        }
     }
 }
